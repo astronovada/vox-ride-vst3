@@ -31,20 +31,20 @@ juce::AudioProcessorValueTreeState::ParameterLayout VoxRideAudioProcessor::creat
 {
     std::vector<std::unique_ptr<juce::RangedAudioParameter>> p;
 
-    p.push_back (std::make_unique<juce::AudioParameterFloat> ("targetDb",       "Target Level",      juce::NormalisableRange<float> (-40.0f, 0.0f, 0.1f),   -18f));
-    p.push_back (std::make_unique<juce::AudioParameterFloat> ("vocalSens",      "Vocal Sensitivity", juce::NormalisableRange<float> (-10.0f, 10.0f, 0.1f),  1.5f));
-    p.push_back (std::make_unique<juce::AudioParameterFloat> ("musicSens",      "Music Sensitivity", juce::NormalisableRange<float> (-10.0f, 10.0f, 0.1f),  2f));
-    p.push_back (std::make_unique<juce::AudioParameterChoice>("speed",          "Response Speed",    juce::StringArray { "Fast", "Slow" },                  0));
-    p.push_back (std::make_unique<juce::AudioParameterFloat> ("minRangeDb",     "Min Range",         juce::NormalisableRange<float> (-12.0f, 0.0f, 0.1f),   -6f));
-    p.push_back (std::make_unique<juce::AudioParameterFloat> ("maxRangeDb",     "Max Range",         juce::NormalisableRange<float> (0.0f, 12.0f, 0.1f),    6f));
-    p.push_back (std::make_unique<juce::AudioParameterBool>  ("idleReturn",     "Idle Return",       true));
-    p.push_back (std::make_unique<juce::AudioParameterFloat> ("gateFloorDb",    "Breath Guard",      juce::NormalisableRange<float> (-60.0f, -20.0f, 0.5f), -40f));
-    p.push_back (std::make_unique<juce::AudioParameterFloat> ("outputDb",       "Output Trim",       juce::NormalisableRange<float> (-18.0f, 12.0f, 0.1f),  0f));
-    p.push_back (std::make_unique<juce::AudioParameterBool>  ("clarityEnabled", "Vocal Clarity",     true));
-    p.push_back (std::make_unique<juce::AudioParameterFloat> ("hpfHz",          "High-Pass Hz",      juce::NormalisableRange<float> (20.0f, 200.0f, 1.0f),  85f));
-    p.push_back (std::make_unique<juce::AudioParameterFloat> ("deMudPct",       "De-Mud %",          juce::NormalisableRange<float> (0.0f, 100.0f, 1.0f),   30f));
-    p.push_back (std::make_unique<juce::AudioParameterFloat> ("presencePct",    "Presence / Air %",  juce::NormalisableRange<float> (0.0f, 100.0f, 1.0f),   38f));
-    p.push_back (std::make_unique<juce::AudioParameterFloat> ("deEssPct",       "De-Esser %",        juce::NormalisableRange<float> (0.0f, 100.0f, 1.0f),   32f));
+        p.push_back (std::make_unique<juce::AudioParameterFloat> ("targetDb",       "Target Level",      juce::NormalisableRange<float> (-40.0f, 0.0f, 0.1f),   -18.0f));
+    // ... (baris 35 biarkan jika sudah ada .0f)
+    p.push_back (std::make_unique<juce::AudioParameterFloat> ("musicSens",      "Music Sensitivity", juce::NormalisableRange<float> (-10.0f, 10.0f, 0.1f),  2.0f));
+    // ... (baris 37 biarkan jika sudah ada .0f)
+    p.push_back (std::make_unique<juce::AudioParameterFloat> ("minRangeDb",     "Min Range",         juce::NormalisableRange<float> (-12.0f, 0.0f, 0.1f),   -6.0f));
+    p.push_back (std::make_unique<juce::AudioParameterFloat> ("maxRangeDb",     "Max Range",         juce::NormalisableRange<float> (0.0f, 12.0f, 0.1f),    6.0f));
+    // ... (baris 40 biarkan jika sudah ada .0f)
+    p.push_back (std::make_unique<juce::AudioParameterFloat> ("gateFloorDb",    "Breath Guard",      juce::NormalisableRange<float> (-60.0f, -20.0f, 0.5f), -40.0f));
+    p.push_back (std::make_unique<juce::AudioParameterFloat> ("outputDb",       "Output Trim",       juce::NormalisableRange<float> (-18.0f, 12.0f, 0.1f),  0.0f));
+    // ... (baris 43 biarkan jika sudah ada .0f)
+    p.push_back (std::make_unique<juce::AudioParameterFloat> ("hpfHz",          "High-Pass Hz",      juce::NormalisableRange<float> (20.0f, 200.0f, 1.0f),  85.0f));
+    p.push_back (std::make_unique<juce::AudioParameterFloat> ("deMudPct",       "De-Mud %",          juce::NormalisableRange<float> (0.0f, 100.0f, 1.0f),   30.0f));
+    p.push_back (std::make_unique<juce::AudioParameterFloat> ("presencePct",    "Presence / Air %",  juce::NormalisableRange<float> (0.0f, 100.0f, 1.0f),   38.0f));
+    p.push_back (std::make_unique<juce::AudioParameterFloat> ("deEssPct",       "De-Esser %",        juce::NormalisableRange<float> (0.0f, 100.0f, 1.0f),   32.0f));
     p.push_back (std::make_unique<juce::AudioParameterBool>  ("limiterEnabled", "True-Peak Limiter", true));
     p.push_back (std::make_unique<juce::AudioParameterBool>  ("bypass",         "Bypass",            false));
 
