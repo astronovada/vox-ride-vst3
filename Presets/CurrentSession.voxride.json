@@ -1,0 +1,24 @@
+{
+  "plugin": "VoxRide",
+  "version": "1.0.0",
+  "presetName": "Lead Vocal — Balanced Ride",
+  "params": {
+    "targetDb": -18,
+    "vocalSensitivity": 1.5,
+    "musicSensitivity": 2,
+    "speed": "fast",
+    "minRangeDb": -6,
+    "maxRangeDb": 6,
+    "idleReturn": true,
+    "gateFloorDb": -40,
+    "outputDb": 0,
+    "clarityEnabled": true,
+    "hpfHz": 85,
+    "deMudPct": 30,
+    "presencePct": 38,
+    "deEssPct": 32,
+    "limiterEnabled": true,
+    "bypass": false,
+    "automationMode": "off"
+  }
+}
